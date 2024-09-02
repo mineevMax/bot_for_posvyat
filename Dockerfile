@@ -6,4 +6,4 @@ RUN pip3 install pyTelegramBotAPI
 
 COPY bot_text_pos.py /bot_text_pos.py
 
-CMD ['python3', 'bot_text_pos.py']
+CMD ["/usr/bin/python3", "bot_text_pos.py"]
