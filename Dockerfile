@@ -1,6 +1,6 @@
 FROM debian:bullseye-slim
 
-RUN apt update && apt install python3 python3-pip
+RUN apt update && apt install -y python3 python3-pip
 
 RUN pip3 install pyTelegramBotAPI
 
