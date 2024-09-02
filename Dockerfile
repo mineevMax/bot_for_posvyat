@@ -1,17 +1,9 @@
-# Используем базовый образ Python
-FROM python:3.9-slim
+FROM debian:bullseye-slim
 
-# Устанавливаем рабочую директорию
-WORKDIR /app
+RUN apt update && apt install python3 python3-pip
 
-# Копируем файл с ботом в контейнер
-COPY bot_text_pos.py /app
+RUN pip3 install pyTelegramBotAPI
 
-# Устанавливаем зависимости (telebot)
-RUN pip install pyTelegramBotAPI
+COPY bot_text_pos.py /bot_text_pos.py
 
-# Устанавливаем переменные окружения (если нужно)
-# ENV TOKEN=ваш_токен
-
-# Запускаем скрипт
-CMD ["python", "bot_text_pos.py"]
+CMD ['python3', 'bot_text_pos.py']
